@@ -1,1 +1,2 @@
-
+Hospital Readmission Data Warehouse & ELT Pipeline
+This project builds a county‑level healthcare analytics warehouse integrating CMS, PLACES, SVI, AHRF, and hospital‑level datasets. It includes a full ELT pipeline, weighted hospital‑to‑county aggregation, a galaxy‑schema data model, and SQL‑based transformations to analyze readmission risk, Medicare cost drivers, and population‑level health indicators.
