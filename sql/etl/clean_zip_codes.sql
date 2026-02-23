@@ -11,3 +11,16 @@
 UPDATE dim_hospital
 SET zip_code = LPAD(SPLIT_PART(zip_code, '-', 1), 5, '0')
 WHERE zip_code IS NOT NULL;
+
+-- ETL: ZIP Code Normalization (Step 2)
+-- Purpose:
+--   • Convert all ZIP codes to 5-digit text format
+--   • Ensure leading zeros are preserved
+--   • Standardize ZIPs for ZIP-to-FIPS mapping
+-- Notes:
+--   • Should be run before county assignment ETL
+-- Version: 1.1 (refined normalization logic)
+
+UPDATE dim_hospital
+SET zip_code = LPAD(zip_code::TEXT, 5, '0')
+WHERE zip_code IS NOT NULL;
